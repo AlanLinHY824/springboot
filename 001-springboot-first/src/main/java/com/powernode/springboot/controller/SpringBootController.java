@@ -3,6 +3,7 @@ package com.powernode.springboot.controller;
 import com.powernode.springboot.config.ConfigInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -26,4 +27,12 @@ public class SpringBootController {
     public @ResponseBody String say(){
         return configInfo.toString();
     }
+
+
+    @RequestMapping("/jsptest")
+    public String jspTest(Model model){
+        model.addAttribute("data", "测试使用jsp");
+        return "index";
+    }
+
 }
