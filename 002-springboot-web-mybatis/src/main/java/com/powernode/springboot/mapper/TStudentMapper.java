@@ -2,13 +2,12 @@ package com.powernode.springboot.mapper;
 
 import com.powernode.springboot.model.TStudent;
 import com.powernode.springboot.model.TStudentExample;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
+//@Mapper
 @Repository
 public interface TStudentMapper {
     int countByExample(TStudentExample example);
