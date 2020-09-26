@@ -9,4 +9,6 @@ import com.powernode.springboot.model.TStudent;
  */
 public interface StudentService {
     TStudent getById(int i);
+
+    Integer insert();
 }

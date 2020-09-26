@@ -22,4 +22,12 @@ public class StudentController {
     public TStudent getById(){
         return studentService.getById(1);
     }
+
+    @RequestMapping("/insert")
+    public Object insert(){
+        return studentService.insert();
+    }
+
+
+
 }
