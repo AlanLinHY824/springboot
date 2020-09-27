@@ -37,23 +37,26 @@ public class StudentServiceImpl implements StudentService {
             System.out.println("-------击中缓存---------");
             return queryAllStudentCount;
         }
+    }
 
-//        redisTemplate.setKeySerializer(new StringRedisSerializer());
-//        Long queryAllStudentCount =(Long) redisTemplate.opsForValue().get("queryAllStudentCount");
-//        if (queryAllStudentCount==null){
-//            synchronized (this){
-//                queryAllStudentCount =(Long) redisTemplate.opsForValue().get("queryAllStudentCount");
-//                if (queryAllStudentCount==null){
-//                    System.out.println("-------查询数据库----------");
-//                    queryAllStudentCount= (long) tStudentMapper.countByExample(null);
-//                    redisTemplate.opsForValue().set("queryAllStudentCount", queryAllStudentCount,60, TimeUnit.SECONDS);
-//                }else {
-//                    System.out.println("--------击中缓存----------");
-//                }
-//            }
-//        }else {
-//            System.out.println("--------击中缓存----------");
-//        }
-//        return queryAllStudentCount;
+    @Override
+    public Long queryAllStudentCount2() {
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        Long queryAllStudentCount =(Long) redisTemplate.opsForValue().get("queryAllStudentCount");
+        if (queryAllStudentCount==null){
+            synchronized (this){
+                queryAllStudentCount =(Long) redisTemplate.opsForValue().get("queryAllStudentCount");
+                if (queryAllStudentCount==null){
+                    System.out.println("-------查询数据库----------");
+                    queryAllStudentCount= (long) tStudentMapper.countByExample(null);
+                    redisTemplate.opsForValue().set("queryAllStudentCount", queryAllStudentCount,60, TimeUnit.SECONDS);
+                }else {
+                    System.out.println("--------击中缓存----------");
+                }
+            }
+        }else {
+            System.out.println("--------击中缓存----------");
+        }
+        return queryAllStudentCount;
     }
 }
