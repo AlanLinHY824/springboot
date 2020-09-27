@@ -42,6 +42,4 @@ public class StudentController {
         return studentService.insert();
     }
 
-
-
 }
