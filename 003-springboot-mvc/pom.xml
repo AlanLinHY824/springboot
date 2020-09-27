@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.powernode.springboot</groupId>
-    <artifactId>002-springboot-web-mybatis</artifactId>
+    <artifactId>003-springboot-mvc</artifactId>
     <version>1.0.0</version>
-    <name>002-springboot-web-mybatis</name>
+    <name>003-springboot-mvc</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -49,25 +49,9 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.47</version>
         </dependency>
-
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-
     </dependencies>
 
     <build>
-<!--        <resources>-->
-<!--            <resource>-->
-<!--                <directory>src/main/java</directory>-->
-<!--                <includes>-->
-<!--                    <include>**/*.xml</include>-->
-<!--                </includes>-->
-<!--            </resource>-->
-<!--        </resources>-->
-
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
