@@ -1,5 +1,9 @@
 package com.powernode.springboot.service;
 
+import com.powernode.springboot.model.TStudent;
+
+import java.util.List;
+
 /**
  * @Author AlanLin
  * @Description
@@ -11,5 +15,7 @@ public interface StudentService {
      * @return
      */
     Long queryAllStudentCount();
+
+    List<TStudent> queryAllStudent();
 
 }
